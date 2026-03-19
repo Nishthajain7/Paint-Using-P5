@@ -25,7 +25,9 @@ function draw() {
   if (mouseIsPressed && !overPalette(mouseX, mouseY)) {
     paintLayer.noStroke();
     paintLayer.fill(brushColor);
-    paintLayer.circle(mouseX, mouseY, brushSize);
+    paintLayer.stroke(brushColor);
+    paintLayer.strokeWeight(brushSize);
+    paintLayer.line(pmouseX, pmouseY, mouseX, mouseY);
   }
   background(255);
   image(paintLayer, 0, 0);
